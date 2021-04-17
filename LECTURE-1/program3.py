@@ -19,4 +19,4 @@ def admin():
 def user(name):
     return f"HELLO {name}"#returns string "HELLO"
 if __name__=="__main__":
-   app.run()#run the development server.
+   app.run()#run the development server
