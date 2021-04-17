@@ -2,7 +2,7 @@
 Run the application.Then open a browser and type in the URL http://127.0.0.1:5000/   ,
 you will receive the string HELLO as a response, this confirms
 that your application is successfully running.
-The website will also display your name when you type it in URL(http://127.0.0.1:5000/name)
+The website will also display your HELLO [your name] when you type it in URL(http://127.0.0.1:5000/name)
 '''
 from flask import Flask #import the Flask object from the flask package
 app=Flask(__name__)#creating your Flask application instance with the name app
