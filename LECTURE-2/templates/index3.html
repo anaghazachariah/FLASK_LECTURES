@@ -1,0 +1,14 @@
+
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+    <body>
+ <!--for and if in html-->
+        {% for i in range(10) %}
+            {% if i%2==1 %}
+                <p>{{i}}</p> <!--to print "i" use <p>i</p>   to print value of i use <p>{{i}}</p>-->
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>
