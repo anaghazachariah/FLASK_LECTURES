@@ -1,0 +1,18 @@
+
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+    <body>
+ <!--to print contents of list in html-->
+        {% for i in content %}
+        {% if i=="jithu" %}
+        <p>{{i}}</p> <!-- print value of i-->
+        {% elif i=="jim" %}
+        <p>i</p><!--print i-->
+        {% else %}
+        <p>JERRY</p><!--print JERRY-->
+        {% endif %}
+        {% endfor %}
+    </body>
+</html>
