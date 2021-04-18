@@ -24,23 +24,25 @@ def login():
         session.permanent=True#making the session permanent(ususally session is default)
         user=request.form["nm"]
         session["user"]=user#storing value in session
+        flash("LOGIN SUCCESSFUL")
         return redirect(url_for("user"))
     else:
         if "user" in session:#if user is loged in even if we write user and login we will get user page
+            flash("ALready login")
             return redirect(url_for("user"))
         return render_template("index1.html")#if method is post(while clicking submit button) we have to be in the same page
 @app.route("/user")
 def user():#user() function will get data from session
     if "user" in session:#we are checking whether the session is active or not
         user=session["user"]
-        return f"<h1>{user}</h1>"#printing value
+        return render_template('index2.html',user=user)
     else:
+        flash("not login")
         return redirect(url_for("login"))#if session is not active we are going back to login page
 @app.route("/logout")
 def logout():#logout code
-    if "user" in session:#we are checking whether the session is active or not
-        user=session["user"]
-        flash("you have been logged out, {user}","info")#message to be displayed( when we logout and got back to login page)
+
+    flash(f"you have been logged out","info")#message to be displayed( when we logout and got back to login page)
     session.pop("user",None)
     
     return redirect(url_for("login"))
