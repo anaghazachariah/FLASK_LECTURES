@@ -1,0 +1,16 @@
+{% extends "base1.html" %} <!--we are using base1.html as our template-->
+{% block title %}LOGIN PAGE{% endblock %}<!--giving title-->
+{% block content %}
+{% with messages= get_flashed_messages()%}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p><!--displays all the flashed messages-->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form action="#" method="POST">
+    <p>Name:</p>
+    <p><input type="text" name="nm"/> </p> <!--input space-->
+    <p><input type="submit" value="submit" /></p><!--creating submit function-->
+</form>
+{% endblock %}<!--giving body-->
